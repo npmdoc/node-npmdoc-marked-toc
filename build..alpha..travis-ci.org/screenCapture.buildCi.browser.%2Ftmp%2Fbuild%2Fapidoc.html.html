@@ -1,0 +1,530 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/jonschlinkert/marked-toc">marked-toc (v0.3.0)</a>
+</h1>
+<h4>Generate a markdown TOC (table of contents).</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.marked-toc">module marked-toc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.marked-toc">
+            function <span class="apidocSignatureSpan"></span>marked-toc
+            <span class="apidocSignatureSpan">(str, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.add">
+            function <span class="apidocSignatureSpan">marked-toc.</span>add
+            <span class="apidocSignatureSpan">(src, dest, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.insert">
+            function <span class="apidocSignatureSpan">marked-toc.</span>insert
+            <span class="apidocSignatureSpan">(str, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.raw">
+            function <span class="apidocSignatureSpan">marked-toc.</span>raw
+            <span class="apidocSignatureSpan">(str, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">marked-toc.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.marked-toc.utils">module marked-toc.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.arrayify">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>arrayify
+            <span class="apidocSignatureSpan">(arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.clean">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>clean
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.escapeRegex">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>escapeRegex
+            <span class="apidocSignatureSpan">(re)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.isDest">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>isDest
+            <span class="apidocSignatureSpan">(dest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.isMatch">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>isMatch
+            <span class="apidocSignatureSpan">(keys, str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.sanitize">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>sanitize
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.marked-toc.utils.slugify">
+            function <span class="apidocSignatureSpan">marked-toc.utils.</span>slugify
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.marked-toc" id="apidoc.module.marked-toc">module marked-toc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.marked-toc" id="apidoc.element.marked-toc.marked-toc">
+        function <span class="apidocSignatureSpan"></span>marked-toc
+        <span class="apidocSignatureSpan">(str, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toc(str, options) {
+  return generate(str, options).toc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.add" id="apidoc.element.marked-toc.add">
+        function <span class="apidocSignatureSpan">marked-toc.</span>add
+        <span class="apidocSignatureSpan">(src, dest, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (src, dest, options) {
+  var opts = _.extend({clean: ['docs']}, options || {});
+  var content = file.readFileSync(src);
+  if (utils.isDest(dest)) {options = dest; dest = src;}
+  file.writeFileSync(dest, toc.insert(content, opts));
+  console.log(' Success:', dest);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var path = require('path');
+var toc = require('./');
+
+var src = path.resolve(process.argv[2] || path.resolve('README.md'));
+var dest = path.resolve(process.argv[3] || src);
+
+toc.<span class="apidocCodeKeywordSpan">add</span>(src, dest);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.insert" id="apidoc.element.marked-toc.insert">
+        function <span class="apidocSignatureSpan">marked-toc.</span>insert
+        <span class="apidocSignatureSpan">(str, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insert = function (str, options) {
+  var start = '&lt;!-- toc --&gt;';
+  var stop  = '&lt;!-- toc stop --&gt;';
+  var strip = /&lt;!-- toc --&gt;[\s\S]+&lt;!-- toc stop --&gt;/;
+
+  var content = matter(str).content;
+  var front   = matter.extend(str);
+
+  // Remove the existing TOC
+  content = content.replace(strip, start);
+
+  // Generate the new TOC
+  var table = '\n\n' + start + '\n\n' + toc(content, options) + '\n' + stop + '\n';
+  return front + content.replace(start, table);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {String} `options`
+*/
+
+toc.add = function(src, dest, options) {
+ var opts = _.extend({clean: ['docs']}, options || {});
+ var content = file.readFileSync(src);
+ if (utils.isDest(dest)) {options = dest; dest = src;}
+ file.writeFileSync(dest, toc.<span class="apidocCodeKeywordSpan">insert</span>(content, opts));
+ console.log(' Success:', dest);
+};
+
+
+/**
+* Expose `toc`
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.raw" id="apidoc.element.marked-toc.raw">
+        function <span class="apidocSignatureSpan">marked-toc.</span>raw
+        <span class="apidocSignatureSpan">(str, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">raw = function (str, options) {
+  return generate(str, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### toc.raw
+
+Output a "raw" (JSON) Table of Contents **object**, for customization and usage in templates
+
+```js
+toc.<span class="apidocCodeKeywordSpan">raw</span>(str, options);
+```
+
+Returns an object (JSON) with two properties, `data` and `toc`:
+
+* `data`: array of headings and associated properties used to construct a TOC. **TIP**: this can be extended with properties, such
+ as src path etc.
+* `toc`: the actual Table of Contents result, as a string
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.marked-toc.utils" id="apidoc.module.marked-toc.utils">module marked-toc.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.arrayify" id="apidoc.element.marked-toc.utils.arrayify">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>arrayify
+        <span class="apidocSignatureSpan">(arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arrayify = function (arr) {
+  return !Array.isArray(arr) ? [arr] : arr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+utils.isDest = function(dest) {
+return !dest || dest === 'undefined' || typeof dest === 'object';
+};
+
+utils.isMatch = function (keys, str) {
+keys = utils.<span class="apidocCodeKeywordSpan">arrayify</span>(keys);
+keys = (keys.length &gt; 0) ? keys.join('|') : '.*';
+
+// Escape certain characters, like '[', '('
+var k = utils.escapeRegex(String(keys));
+
+// Build up the regex to use for replacement patterns
+var re = new RegExp('(?:' + k + ')', 'g');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.clean" id="apidoc.element.marked-toc.utils.clean">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>clean
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clean = function (name, options) {
+  var opts = _.extend({}, options);
+  if(opts.omit === false) {omit = [];}
+  var exclusions = _.union(omit, utils.arrayify(opts.clean || []));
+  var re = new RegExp('^(?:' + exclusions.join('|') + ')[-_]?', 'g');
+  return name.replace(re, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Since we removed the first h1, we'll check to see if other h1's
+// exist. If none exist, then we unindent the rest of the TOC
+if(!h1) {
+  token.depth = token.depth - 1;
+}
+
+// Store original text and create an id for linking
+token.heading = opts.clean ? utils.<span class="apidocCodeKeywordSpan">clean</span>(token.text, opts) : token.text;
+
+// Create a "slugified" id for linking
+token.id = opts.slugify(token.text);
+
+// Omit headings with these strings
+var omissions = ['Table of Contents', 'TOC', 'TABLE OF CONTENTS'];
+var omit = _.union([], opts.omit, omissions);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.escapeRegex" id="apidoc.element.marked-toc.utils.escapeRegex">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>escapeRegex
+        <span class="apidocSignatureSpan">(re)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeRegex = function (re) {
+  return re.replace(/(\[|\]|\(|\)|\/|\.|\^|\$|\*|\+|\?)/g, '\\$1');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+utils.isMatch = function (keys, str) {
+keys = utils.arrayify(keys);
+keys = (keys.length &gt; 0) ? keys.join('|') : '.*';
+
+// Escape certain characters, like '[', '('
+var k = utils.<span class="apidocCodeKeywordSpan">escapeRegex</span>(String(keys));
+
+// Build up the regex to use for replacement patterns
+var re = new RegExp('(?:' + k + ')', 'g');
+if (String(str).match(re)) {
+  return true;
+} else {
+  return false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.isDest" id="apidoc.element.marked-toc.utils.isDest">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>isDest
+        <span class="apidocSignatureSpan">(dest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDest = function (dest) {
+  return !dest || dest === 'undefined' || typeof dest === 'object';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {String} `dest`
+* @param {String} `options`
+*/
+
+toc.add = function(src, dest, options) {
+ var opts = _.extend({clean: ['docs']}, options || {});
+ var content = file.readFileSync(src);
+ if (utils.<span class="apidocCodeKeywordSpan">isDest</span>(dest)) {options = dest; dest = src;}
+ file.writeFileSync(dest, toc.insert(content, opts));
+ console.log(' Success:', dest);
+};
+
+
+/**
+* Expose `toc`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.isMatch" id="apidoc.element.marked-toc.utils.isMatch">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>isMatch
+        <span class="apidocSignatureSpan">(keys, str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isMatch = function (keys, str) {
+  keys = utils.arrayify(keys);
+  keys = (keys.length &gt; 0) ? keys.join('|') : '.*';
+
+  // Escape certain characters, like '[', '('
+  var k = utils.escapeRegex(String(keys));
+
+  // Build up the regex to use for replacement patterns
+  var re = new RegExp('(?:' + k + ')', 'g');
+  if (String(str).match(re)) {
+    return true;
+  } else {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create a "slugified" id for linking
+token.id = opts.slugify(token.text);
+
+// Omit headings with these strings
+var omissions = ['Table of Contents', 'TOC', 'TABLE OF CONTENTS'];
+var omit = _.union([], opts.omit, omissions);
+
+if (utils.<span class="apidocCodeKeywordSpan">isMatch</span>(omit, token.heading)) {
+  return;
+}
+
+return true;
+  }).forEach(function (h) {
+
+if(h.depth &gt; opts.maxDepth) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.sanitize" id="apidoc.element.marked-toc.utils.sanitize">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>sanitize
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sanitize = function (src) {
+  src = src.replace(/(\s*\[!|(?:\[.+ â†’\]\()).+/g, '');
+  src = src.replace(/\s*\*\s*\[\].+/g, '');
+  return src;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.marked-toc.utils.slugify" id="apidoc.element.marked-toc.utils.slugify">
+        function <span class="apidocSignatureSpan">marked-toc.utils.</span>slugify
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slugify = function (str) {
+  str = str.replace(/\/\//g, '-');
+  str = str.replace(/\//g, '-');
+  str = str.replace(/\./g, '-');
+  str = _.str.slugify(str);
+  str = str.replace(/^-/, '');
+  str = str.replace(/-$/, '');
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  token.depth = token.depth - 1;
+}
+
+// Store original text and create an id for linking
+token.heading = opts.clean ? utils.clean(token.text, opts) : token.text;
+
+// Create a "slugified" id for linking
+token.id = opts.<span class="apidocCodeKeywordSpan">slugify</span>(token.text);
+
+// Omit headings with these strings
+var omissions = ['Table of Contents', 'TOC', 'TABLE OF CONTENTS'];
+var omit = _.union([], opts.omit, omissions);
+
+if (utils.isMatch(omit, token.heading)) {
+  return;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
